@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Manual Testing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Added Google Font -->
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4fc; /* Light background for webpage */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #6C63FF; /* Updated to lighter blue */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #4B47CC; /* Darker shade of lighter blue for hover */
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            background-color: #ffffff;
+            padding: 10px 0;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #6C63FF; /* Updated to lighter blue */
+        }
+
+        nav ul li a.active {
+            color: #6C63FF; /* Updated to lighter blue */
+            font-weight: bold;
+            border-bottom: 2px solid #6C63FF;
+        }
+
+        /* Sections */
+        section {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Skills Table */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .skills-table th,
+        .skills-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .skills-table th {
+            background-color: #007BFF; /* Changed to blue */
+            color: white;
+        }
+
+        .skills-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding: 40px 20px;
+            background: #e8e8ff; /* Light background for contact section */
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form .form-group label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .contact-form .form-group input,
+        .contact-form .form-group textarea {
+            padding: 15px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form .form-group input:focus,
+        .contact-form .form-group textarea:focus {
+            outline: none;
+            border-color: #6C63FF; /* Updated to lighter blue */
+            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+        }
+
+        .contact-form .btn {
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            color: white;
+            background-color: #6C63FF; /* Updated to lighter blue */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-form .btn:hover {
+            background-color: #4B47CC; /* Darker shade of lighter blue for hover */
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ffffff;
+            color: #666;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-name {
+            font-family: 'Pacifico', cursive; /* Stylish font */
+            font-size: 3rem;
+            color: #FFD700; /* Changed to golden */
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="brand-name">SkillsSpectrum</div> <!-- Added brand name -->
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Delivering Quality Software with Precision and Passion</p>
+    </header>
+    <div class="hero">
+        <h2>Ensuring Quality, One Test at a Time</h2>
+        <p>Explore my skills, experience, and projects in manual testing.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="projects.html" target="_blank">Projects</a></li> <!-- Updated href -->
+            <li><a href="#media">Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a dedicated manual tester with 5 years of experience in ensuring software quality and reliability. 
+            My expertise lies in identifying bugs, creating test cases, and collaborating with development teams to deliver high-quality products.
+        </p>
+        <p>
+            I have a strong passion for understanding user needs and ensuring that software meets the highest standards of usability and functionality. 
+            My approach to testing is meticulous and user-focused, ensuring that every feature works seamlessly and delivers value to the end user.
+        </p>
+        <p>
+            Over the years, I have worked on diverse projects across industries such as e-commerce, healthcare, and finance. 
+            These experiences have equipped me with the ability to adapt to different domains and understand complex systems quickly.
+        </p>
+        <p>
+            I am proficient in using tools like JIRA, Trello, and SQL for defect tracking, test management, and database validation. 
+            Additionally, I have a foundational understanding of automation tools like Selenium, which helps me collaborate effectively with automation teams.
+        </p>
+        <p>
+            Outside of work, I enjoy staying updated with the latest trends in software testing and technology. 
+            I am also an advocate for continuous learning and often participate in webinars, workshops, and online courses to enhance my skills.
+        </p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <table class="skills-table">
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="fas fa-check-circle"></i> Test Case Design</td>
+                    <td>Creating detailed and effective test cases to ensure software quality.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-bug"></i> Defect Tracking</td>
+                    <td>Identifying, reporting, and tracking bugs to closure.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-sync-alt"></i> Regression Testing</td>
+                    <td>Ensuring new changes do not affect existing functionality.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-search"></i> Exploratory Testing</td>
+                    <td>Uncovering edge cases and hidden issues through exploratory testing.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-users"></i> Agile Methodologies</td>
+                    <td>Working in Agile environments and participating in sprints.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-tools"></i> Tools: JIRA, TestRail</td>
+                    <td>Proficient in using tools for defect tracking and test management.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-chart-line"></i> Performance Testing</td>
+                    <td>Analyzing system performance under load and stress conditions.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-database"></i> SQL</td>
+                    <td>Writing and executing SQL queries for database validation.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-file-alt"></i> Documentation</td>
+                    <td>Creating detailed test plans, test cases, and test reports.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-cogs"></i> Automation Basics</td>
+                    <td>Understanding of automation tools like Selenium for basic scripting.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Over the past 5 years, I have worked on various projects across domains like e-commerce, healthcare, and finance. My role involved:</p>
+        <ul>
+            <li>Collaborating with cross-functional teams to understand requirements.</li>
+            <li>Creating detailed test plans and test cases.</li>
+            <li>Executing manual tests and documenting results.</li>
+            <li>Reporting and tracking bugs to closure.</li>
+            <li>Performing regression testing to ensure new changes do not affect existing functionality.</li>
+            <li>Conducting exploratory testing to uncover edge cases and hidden issues.</li>
+            <li>Providing detailed feedback to developers to improve software quality.</li>
+            <li>Mentoring junior testers and assisting them in understanding testing processes.</li>
+            <li>Working in Agile environments and participating in daily stand-ups, sprint planning, and retrospectives.</li>
+            <li>Using tools like JIRA and TestRail for defect tracking and test management.</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Suraj Patil. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+
+            // Contact form validation
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (event) => {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name.length > 50) {
+                    alert('Name should not exceed 50 characters.');
+                    event.preventDefault();
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    event.preventDefault();
+                    return;
+                }
+
+                if (message.length > 300) {
+                    alert('Message should not exceed 300 characters.');
+                    event.preventDefault();
+                    return;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
