@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Added Google Font -->
+    <link rel="stylesheet" href="css/projects.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4fc; /* Light background for webpage */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Brand Name */
+        .brand-name {
+            font-family: 'Pacifico', cursive; /* Stylish font */
+            font-size: 3rem;
+            color: #FFD700; /* Changed to golden */
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Project Section */
+        .project {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+        }
+
+        .project p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0 0;
+        }
+
+        .view-details {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6C63FF; /* Updated to lighter blue */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .view-details:hover {
+            background-color: #4B47CC; /* Darker shade of lighter blue for hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dropdown Content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            text-decoration: none;
+            color: #6C63FF; /* Updated to lighter blue */
+            font-size: 1rem;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .dropdown-content a:hover {
+            text-decoration: underline;
+            color: #4B47CC; /* Darker shade of lighter blue for hover */
+        }
+
+        /* Show Dropdown on Hover */
+        .project:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ffffff;
+            color: #666;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="brand-name">SkillsSpectrum</div> <!-- Added brand name -->
+    <header>
+        <h1>My Projects</h1>
+        <p>Explore the projects I have worked on to ensure software quality and reliability.</p>
+    </header>
+    <div class="project">
+        <div>
+            <h2>Project 1: E-commerce Website Testing</h2>
+            <p>Performed end-to-end manual testing for an e-commerce platform, ensuring a seamless user experience.</p>
+        </div>
+        <a href="projects1.html" target="_blank" class="view-details">View Details</a>
+    </div>
+    <div class="project">
+        <div>
+            <h2>Project 2: Healthcare Application</h2>
+            <p>Tested a healthcare application for managing patient records, focusing on data accuracy and security.</p>
+        </div>
+        <a href="projects2.html" target="_blank" class="view-details">View Details</a>
+    </div>
+    <div class="project">
+        <div>
+            <h2>Project 3: Finance Management Tool</h2>
+            <p>Conducted regression and exploratory testing for a finance management tool to ensure functionality and reliability.</p>
+        </div>
+        <a href="projects3.html" target="_blank" class="view-details">View Details</a>
+    </div>
+    <div class="project">
+        <div>
+            <h2>Project 4: Social Media Platform</h2>
+            <p>Tested a social media platform for performance, scalability, and user experience.</p>
+        </div>
+        <a href="projects4.html" target="_blank" class="view-details">View Details</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Suraj Patil. All rights reserved.</p>
+    </footer>
+</body>
+</html>
