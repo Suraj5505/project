@@ -348,8 +348,9 @@
             <li>Providing detailed feedback to developers to improve software quality.</li>
             <li>Mentoring junior testers and assisting them in understanding testing processes.</li>
             <li>Working in Agile environments and participating in daily stand-ups, sprint planning, and retrospectives.</li>
-            <li>Using tools like JIRA and TestRail for defect tracking and test management.</li>
-        </ul>
+            <li>Using tools like JIRA and Trello for defect tracking and test management.</li>
+        <li>Used excel for test case writing.<li>                                                                                                                         
+        
     </section>
     <section id="contact">
         <h2>Contact Me</h2>
@@ -389,8 +390,9 @@
                 const email = document.getElementById('email').value.trim();
                 const message = document.getElementById('message').value.trim();
 
-                if (name.length > 50) {
-                    alert('Name should not exceed 50 characters.');
+                // Name validation: minimum 8 characters, maximum 20 characters
+                if (name.length < 8 || name.length > 20) {
+                    alert('Name must be between 8 and 20 characters.');
                     event.preventDefault();
                     return;
                 }
